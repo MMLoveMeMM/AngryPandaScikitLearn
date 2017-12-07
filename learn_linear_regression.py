@@ -55,16 +55,35 @@ def get_corrcoef(X,Y):
     return cov/(np.var(X)*np.var(Y))**0.5
     
     
-xcord,ycord=load_data("abalone.txt")
-xcord,ycord=standarize(xcord),standarize(ycord)
-w=std_linearreg(xcord,ycord)
-y_prime=xcord*w
-print("w {} : \n",format(w))
+if '__main__' == __name__:
+    # 加载数据
+    X, Y = load_data('abalone.txt')
+    X, Y = standarize(X), standarize(Y)
+    w = std_linearreg(X, Y)
+    Y_prime = X*w
 
-# 计算相关系数
-corrcoef=get_corrcoef(np.array(ycord.reshape(1,-1)),np.array(y_prime.reshape(1,-1)))
-print('Correlation coeffient : \n',format(corrcoef))
+    print('w: {}'.format(w))
 
+    # 计算相关系数
+    corrcoef = get_corrcoef(np.array(Y.reshape(1, -1)),
+                            np.array(Y_prime.reshape(1, -1)))
+    print('Correlation coeffient: {}'.format(corrcoef))
+
+    #fig = plt.figure()
+    #ax = fig.add_subplot(111)
+
+    ## 绘制数据点
+    #x = X[:, 1].reshape(1, -1).tolist()[0]
+    #y = Y.reshape(1, -1).tolist()[0]
+    #ax.scatter(x, y)
+
+    ## 绘制拟合直线
+    #x1, x2 = min(x), max(x)
+    #y1 = (np.matrix([1, x1])*w).tolist()[0][0]
+    #y2 = (np.matrix([1, x2])*w).tolist()[0][0]
+    #ax.plot([x1, x2], [y1, y2], c='r')
+
+    #plt.show()
 
 
 
