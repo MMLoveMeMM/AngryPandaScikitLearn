@@ -81,7 +81,7 @@ plt.subplot(224),plt.imshow(img_back,'gray'),plt.title('another way',fontpropert
 plt.xticks([]),plt.yticks([])
 plt.show()
 
-
+# 从上面设置断点来看,其实每一个像素点[对图片而言]都对应一个a+b*i的虚函数,或者说cos(x)+i*sin(x),也就是说每一个像素点都有振幅A和相位角决定这个像素点的属性
 
 
 
