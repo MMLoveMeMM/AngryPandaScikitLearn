@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec 12 16:54:49 2017
-
+learn_gradient_descent_basic.py
 @author: rd0348
 用梯度下降法求解最优值问题
 梯度是函数在某点沿每个坐标的偏导数构成的向量，它反映了函数沿着哪个方向增加得最快。
 因此要求解一个二元函数的极小值，只要沿着梯度的反方向走，直到函数值的变化满足精度即可。
 这里打表存储了途径的每个点，最后在图上绘制出来以反映路径.
+参考 : http://blog.csdn.net/SHU15121856/article/details/72593616
 """
 
 import matplotlib.pyplot as plt
@@ -38,7 +39,7 @@ x=0
 y=0#初始选取一个点
 tag_x=[x]
 tag_y=[y]
-tag_z=[Fun(x,y)]#三个坐标分别打入表中，该表用于绘制点
+tag_z=[Fun(x,y)]# loss向量
 new_x=x
 new_y=y
 Over=False
@@ -51,7 +52,7 @@ while Over==False:
     y=new_y#更新旧点
     tag_x.append(x)
     tag_y.append(y)
-    tag_z.append(Fun(x,y))#新点三个坐标打入表中
+    tag_z.append(Fun(x,y))#每个样本对应的loss
 
 #绘制点/输出坐标
 ax.plot(tag_x,tag_y,tag_z,'r.')
