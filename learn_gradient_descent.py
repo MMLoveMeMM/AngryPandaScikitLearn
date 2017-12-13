@@ -13,6 +13,7 @@ Created on Thu Dec  7 09:41:48 2017
 import sympy
 import numpy as np
 from sympy.abc import x,y
+import scipy.optimize as opt
 
 fsym=x**2+3*x-10
 
