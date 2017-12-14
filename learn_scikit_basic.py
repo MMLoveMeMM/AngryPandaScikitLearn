@@ -12,7 +12,6 @@ print("*"*60)
 print("url with dataset : 加载数据")
 url = "http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data"
 # download the file
-# raw_data = urllib.urlopen(url)
 raw_data =urllib.request.urlopen(url)#.read() 
 # load the CSV file as a numpy matrix
 dataset = np.loadtxt(raw_data, delimiter=",")

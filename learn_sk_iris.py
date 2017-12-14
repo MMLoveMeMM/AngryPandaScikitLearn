@@ -35,12 +35,6 @@ Created on Wed Dec 13 17:27:30 2017
 ###########################
 
 ##################
-#在ubuntu15.10中通过如下6条命令来安装python环境
-#sudo apt-get install python   #安装python最新版，一般已经自带最新2.7版本了
-#sudo apt-get install python-numpy    #安装python的numpy模块
-#sudo apt-get install python-matplotlib
-#sudo apt-get install python-networkx
-#sudo apt-get install python-sklearn
 #python  #看python版本并进入交互式界面，就可以执行如下命令，全部拷贝黏贴进去试试看？
 #另外，可以下载Anaconda的Python IDE集成环境，搜一下非常好，很多SCIPY等核心库都集成了，免去安装之苦！
 #特别注意：笔者是WIN10宿主机上安装Ubuntu15.10最新虚拟机，在Ubuntu中默认安装了python，升级并安装以上lib后实践所有如下代码！
